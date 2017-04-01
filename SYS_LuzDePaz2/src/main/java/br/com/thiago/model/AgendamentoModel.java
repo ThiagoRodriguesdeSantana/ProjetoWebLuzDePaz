@@ -1,0 +1,67 @@
+package br.com.thiago.model;
+
+import java.util.Date;
+
+public class AgendamentoModel {
+
+    private int codigo;
+    private Date dataHora;
+    private String local;
+    private String nomeCondultor;
+    
+    public static String codigoAgendamento = "codigo";
+	public static String dataHoraAgendamento = "dataHora";
+	public static String localAgendamento = "local";
+	public static String nomeConsultor = "nomeConsultor";
+	
+	
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public Date getDataHora() {
+		return dataHora;
+	}
+	public void setDataHora(Date dataHora) {
+		this.dataHora = dataHora;
+	}
+	public String getLocal() {
+		return local;
+	}
+	public void setLocal(String local) {
+		this.local = local;
+	}
+	public String getNomeCondultor() {
+		return nomeCondultor;
+	}
+	public void setNomeCondultor(String nomeCondultor) {
+		this.nomeCondultor = nomeCondultor;
+	}
+	public static String getCodigoAgendamento() {
+		return codigoAgendamento;
+	}
+	public static void setCodigoAgendamento(String codigoAgendamento) {
+		AgendamentoModel.codigoAgendamento = codigoAgendamento;
+	}
+	public static String getDataHoraAgendamento() {
+		return dataHoraAgendamento;
+	}
+	public static void setDataHoraAgendamento(String dataHoraAgendamento) {
+		AgendamentoModel.dataHoraAgendamento = dataHoraAgendamento;
+	}
+	public static String getLocalAgendamento() {
+		return localAgendamento;
+	}
+	public static void setLocalAgendamento(String localAgendamento) {
+		AgendamentoModel.localAgendamento = localAgendamento;
+	}
+	public static String getNomeConsultor() {
+		return nomeConsultor;
+	}
+	public static void setNomeConsultor(String nomeConsultor) {
+		AgendamentoModel.nomeConsultor = nomeConsultor;
+	}
+	
+}
