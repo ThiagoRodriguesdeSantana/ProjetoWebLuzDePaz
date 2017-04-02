@@ -5,7 +5,7 @@ public class Endereco {
 	private String rua;
 	private String complemento;
 	private String bairro;
-	private String CEP;
+	private String cep;
 	private String cidade;
 	private String estado;
 	
@@ -17,6 +17,13 @@ public class Endereco {
 	public static String estadoEndereco = "estado";
 	
 	
+	
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 	
 	public String getRua() {
 		return rua;
@@ -36,12 +43,7 @@ public class Endereco {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public String getCEP() {
-		return CEP;
-	}
-	public void setCEP(String cEP) {
-		CEP = cEP;
-	}
+	
 	public String getCidade() {
 		return cidade;
 	}

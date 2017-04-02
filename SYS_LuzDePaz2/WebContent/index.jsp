@@ -7,6 +7,6 @@
 <title>Cadastro de Cliente</title>
 </head>
 <body>
-      <jsp:forward page="/ClienteController?Comando=listar"/>
+      <jsp:forward page="/ClienteController?comando=listar"/>
 </body>
 </html>

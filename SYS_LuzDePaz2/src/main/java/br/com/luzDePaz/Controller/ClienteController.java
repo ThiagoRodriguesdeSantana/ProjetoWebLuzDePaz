@@ -34,16 +34,30 @@ public class ClienteController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String Acao = "";
-        String Comando = request.getParameter("Comando");
+        String comando = request.getParameter("comando");
         
-        if(Comando.equalsIgnoreCase("Inserir")){
+        if(comando.equalsIgnoreCase("Inserir")){
         	 Acao = Inserir_Editar;
         }
-        if(Comando.equalsIgnoreCase("listar")){
+        
+        if(comando.equalsIgnoreCase("listar")){
        	 Acao = Inserir_Editar;
-       	 List<ClienteModel> list = dao.ListarCleientes();
        	 request.setAttribute("clientes", dao.ListarCleientes());
-       }
+        }
+        
+        if(comando.equalsIgnoreCase("atualizar")){
+        	Acao = Inserir_Editar;
+        	int codigo = Integer.parseInt(request.getParameter("codigo"));
+        	ClienteModel cliente = dao.Consultar(codigo);
+        	request.setAttribute("cliente", cliente);
+        }
+        if(comando.equalsIgnoreCase("excluir")){
+        	Acao = Inserir_Editar;
+        	int codigo = Integer.parseInt(request.getParameter("codigo"));
+        	dao.ExcluirCliente(codigo);
+        	request.setAttribute("clientes", dao.ListarCleientes());
+        	
+        }
 		
         RequestDispatcher view = request.getRequestDispatcher(Acao);
         view.forward(request, response);
@@ -53,14 +67,12 @@ public class ClienteController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try{
 			
-			
-
 			ClienteModel cliente = new ClienteModel();
 			Endereco endereco = new Endereco();
 
 			cliente.setNome(request.getParameter(ClienteModel.NomeCliente));
 			endereco.setBairro(request.getParameter(Endereco.bairroEndereco));
-			endereco.setCEP(request.getParameter(Endereco.CepEndereco));
+			endereco.setCep(request.getParameter(Endereco.CepEndereco));
 			
 			
 			
@@ -69,22 +81,21 @@ public class ClienteController extends HttpServlet {
 			endereco.setRua(request.getParameter(Endereco.ruaEndereco));
 			
 			
-			
 			endereco.setEstado(request.getParameter(Endereco.estadoEndereco));
 			
 			cliente.setEndereco(endereco);
-			cliente.setCPF(request.getParameter(ClienteModel.CpfCliente));
+			cliente.setCpf(request.getParameter(ClienteModel.CpfCliente));
 			cliente.setTelefone(request.getParameter(ClienteModel.telefoneCliente));
 			cliente.setEmail(request.getParameter(ClienteModel.emailCliente));
-			
 			cliente.setTipoCliente(pegarTipoCliente(request.getParameter(ClienteModel.tipoClienteCliente)));
-			SimpleDateFormat dataS = new SimpleDateFormat("dd-MM-yyyy");
 			
+			System.out.println("data:"+ClienteModel.dataNascimentoCliente);
+			SimpleDateFormat dataS = new SimpleDateFormat("dd-MM-yyyy");
 			Date data = dataS.parse(request.getParameter(ClienteModel.dataNascimentoCliente));
 			
-			cliente.setDataNacimento(data);
+			cliente.setDataNascimento(data);
 			
-			System.out.println("data:"+cliente.getDataNacimento().getTime());
+			System.out.println("data:"+cliente.getDataNascimento().getTime());
 
 			String id = request.getParameter(ClienteModel.CodigoCliente);
 			if (id.isEmpty()) {

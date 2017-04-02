@@ -1,20 +1,24 @@
 package br.com.thiago.model;
 
 import java.util.Date;
-import java.util.List;
-
-import javafx.beans.property.ReadOnlyBooleanProperty;
 
 public class ClienteModel {
 
 	private int codigo;
 	private String nome;
 	private Endereco endereco;
-	private String CPF;
+	private String cpf;
 	private String telefone;
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	private String email;
 	protected TipoCliente tipoCliente;
 	private Date dataNascimento;
+	
 	
 	
 	
@@ -28,7 +32,12 @@ public class ClienteModel {
 	public static String nomeTabela = "tb_cliente";
 	
 	
-	
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	
 	public int getCodigo() {
 		return codigo;
@@ -48,12 +57,8 @@ public class ClienteModel {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public String getCPF() {
-		return CPF;
-	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
-	}
+	
+	
 	public String getTelefone() {
 		return telefone;
 	}
@@ -66,17 +71,11 @@ public class ClienteModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDataNacimento() {
-		return dataNascimento;
-	}
-	public void setDataNacimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	public TipoCliente getTipoCliente() {
-		return tipoCliente;
-	}
 	public void setTipoCliente(TipoCliente tipoCliente) {
 		this.tipoCliente = tipoCliente;
+	}
+	public TipoCliente getTipoCliente(){
+		return tipoCliente;
 	}
 	
 	

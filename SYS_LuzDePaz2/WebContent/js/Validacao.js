@@ -15,68 +15,50 @@ function validaFormulario(){
     let cep = $('#cep').val();
     let rua = $('#rua').val();
     let comlemento = $('#complemento').val();
+    let dataNascimento = $('#dataNascimento').val();
     let cidade = $('#cidade').val();
     let estado = $('#estado').val();
     let email = $('#email').val();
     let telefone = $('#telefone').val();
+    let ano = dataNascimento.substr(6,4);
 
     if(nome == ''){
-        AlteraEtapa(1);
         $('#nome').focus();
-        $('#nome').tooltip('show')
        
-        setTimeout(function(){
-          $('#nome').tooltip('destroy')
-        },3000)
+        alert("Informe o nome do cliente!")
+        return false;
+    }
+    else if(email == "" || email.indexOf('@')==-1){
+    	$('#email').focus();
+    	alert("Informe um email válido!")
+        return false;
     }
      else if(cpf == ''){
-        AlteraEtapa(1);
         $('#cpf').focus();
-         $('#cpf').tooltip('show')
-          setTimeout(function(){
-          $('#cpf').tooltip('destroy')
-        },3000)
+        alert("Informe o CPF do cliente!")
+        return false;
     }
      else if(cep == ''){
-         AlteraEtapa(1);
          $('#cep').focus();
-          $('#cep').tooltip('show')
-           setTimeout(function(){
-           $('#cep').tooltip('destroy')
-         },3000)
+         alert("Informe o CEP do cliente!")
+         return false;
      }
     else if(cidade == ''){
-        AlteraEtapa(2);
         $('#cidade').focus();
-        $('#cidade').tooltip('show')
-         setTimeout(function(){
-          $('#cidade').tooltip('destroy')
-        },3000)
+        $('#cpf').focus();
+        alert("Informe a CIDADE do cliente!")
+        return false;
     }
     else if(estado == ''){
-        AlteraEtapa(2);
         $('#estado').focus();
-        $('#estado').tooltip('show')
-         setTimeout(function(){
-          $('#estado').tooltip('destroy')
-        },3000)
+        $('#cpf').focus();
+        alert("Informe o ESTADO do cliente!")
+        return false;
     }
-    else if(facebook == ''){
-        $('#facebook').focus();
-        $('#facebook').tooltip('show')
-         setTimeout(function(){
-          $('#facebook').tooltip('destroy')
-        },3000)
+    else if(dataNascimento == ''){
+        $('#dataNascimento').focus();
+        alert("Informe a DATA DE NASCIMENTO do cliente!")
+        return false;
     }
-    else if(twitter == ''){
-        $('#twitter').focus();
-        $('#twitter').tooltip('show')
-         setTimeout(function(){
-          $('#twitter').tooltip('destroy')
-        },3000)
-        
-    }
-
     
-    console.log(nome, email, cidade, estado, facebook, twitter);
 }

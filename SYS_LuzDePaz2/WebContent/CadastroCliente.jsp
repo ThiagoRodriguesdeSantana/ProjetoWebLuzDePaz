@@ -11,6 +11,10 @@
 
 <script src="js/jquery-3.2.0.min.js"></script>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Validacao.js"></script>
@@ -39,17 +43,17 @@
 
 	</div>
 	<div class="container">
-		<form method="POST" action="ClienteController" >
+		<form method="POST" action="ClienteController"  onsubmit="return validaFormulario()">
 
 			<div class="form-group col-md-3">
 				<label for="codigo">Código</label>
 				 <input type="text"
-					class="form-control" id="codigo" placeholder="código" name="codigo" value="<c:out value="${cliente.codigo}"/>">
+					class="form-control" id="codigo" readonly="readonly" placeholder="código" name="codigo" value="<c:out value="${cliente.codigo}"/>">
 			</div>
 
 			<div class="form-group col-md-9">
 				<label for="nome">Nome</label> 
-				<input type="text"class="form-control" id="nome" placeholder="nome" name="nome"   value="<c:out value="${cliente.nome}"/>">
+				<input type="text"class="form-control" id="nome"placeholder="nome" name="nome"   value="<c:out value="${cliente.nome}"/>">
 			</div>
 
 			<div class="form-group col-md-12">
@@ -75,38 +79,37 @@
 				</select>
 			</div>
 
-
 			<div class="form-group col-md-3">
 				<label for="datepicker">Data de Nascimento</label>
 				<p>
-					<input type="date" name="dataNascimento" class="form-control" 
-					value="<fmt:formatDate pattern="yyyy/MM/dd" value="${cliente.dataNascimento}" />">
+					<input type="date" id="dataNascimento" name="dataNascimento" class="form-control" 
+					value="<fmt:formatDate pattern="MM/dd/yyyy" value="${cliente.dataNascimento}" />">
 				</p>
 			</div>
 
-
 			<div class="form-group col-md-3">
 				<label for="cep">CEP</label> 
-				<input type="text" class="form-control" id="cep" name="cep" placeholder="cep" value="<c:out value="${cliente.cep}"/>">
+				<input type="text" class="form-control" id="cep" name="cep" placeholder="cep" value="<c:out value="${cliente.endereco.cep}"/>">
 			</div>
 
 			<div class="form-group col-md-3">
 				<label for="Rua">Rua</label> 
-				<input type="text" class="form-control" id="rua" name="rua" placeholder="rua" value="<c:out value="${cliente.rua}"/>">
+				<input type="text" class="form-control" id="rua" name="rua" placeholder="rua" value="<c:out value="${cliente.endereco.rua}"/>">
 			</div>
 
 			<div class="form-group col-md-6">
 				<label for="comp">Complemento</label> 
-				<input type="text" class="form-control" id="complemento" name="complemento" placeholder="complemento"  value="<c:out value="${cliente.complemento}"/>">
+				<input type="text" class="form-control" id="complemento" name="complemento" placeholder="complemento"  value="<c:out value="${cliente.endereco.complemento}"/>">
 			</div>
+			
 			<div class="form-group col-md-6">
 				<label for="bairro">Bairro</label> 
-				<input type="text" class="form-control" id="bairro" name="bairro" placeholder="bairro"  value="<c:out value="${cliente.bairro}"/>">
+				<input type="text" class="form-control" id="bairro" name="bairro" placeholder="bairro"  value="<c:out value="${cliente.endereco.bairro}"/>">
 			</div>
 
 			<div class="form-group col-md-3">
 				<label>Cidade</label> 
-				<select class="form-control" id="cidade" name="cidade" value="<c:out value="${cliente.cidade}"/>">
+				<select class="form-control" id="cidade" name="cidade" value="<c:out value="${cliente.endereco.cidade}"/>">
 					<option>Goiania</option>
 					<option>Trindade</option>
 					<option>Aparecida de Goiania</option>
@@ -117,7 +120,7 @@
 			</div>
 			<div class="form-group col-md-3">
 				<label>Cidade</label> 
-				<select class="form-control" id="estado" name="estado" value="<c:out value="${cliente.estado}"/>">
+				<select class="form-control" id="estado" name="estado" value="<c:out value="${cliente.endereco.estado}"/>">
 				<option>Goias</option>
 				</select>
 			</div>
@@ -136,7 +139,7 @@
 					<th>Nome</th>
 					<th>Email</th>
 					<th>Telefone</th>
-					<th>Tipo</th>
+					<th colspan=2>Ação</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -146,7 +149,8 @@
 						<td><c:out value="${cliente.nome}" /></td>
 						<td><c:out value="${cliente.email}" /></td>
 						<td><c:out value="${cliente.telefone}" /></td>
-						<td><c:out value="${cliente.tipoCliente}" /></td>
+						<td><a href="ClienteController?comando=atualizar&codigo=<c:out value="${cliente.codigo}"/>">Atualizar</a></td>
+                        <td><a href="ClienteController?comando=excluir&codigo=<c:out value="${cliente.codigo}"/>">Excluir</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
