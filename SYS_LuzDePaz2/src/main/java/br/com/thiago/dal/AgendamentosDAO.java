@@ -26,7 +26,7 @@ public class AgendamentosDAO {
 									+ "VALUES (?, ?, ?);");
 			ps.setDate(1, new java.sql.Date(agendamento.getDataHora().getTime()));
 			ps.setString(2, agendamento.getLocal());
-			ps.setString(3, agendamento.getNomeCondultor());
+			ps.setString(3, agendamento.getNomeConsultor());
 		
 			ps.execute();
 			
@@ -35,17 +35,17 @@ public class AgendamentosDAO {
 		}
 	
 	}
-	public void laterarAgendamento(AgendamentoModel agendamento){
+	public void alterarAgendamento(AgendamentoModel agendamento){
 		
 		try {
 			PreparedStatement ps = conexao
 					.prepareStatement("UPDATE public.tb_agendamentos"
-							+ "SET \"dataHora\"=?, local=?, \"nomeConsultor\"=?"
-									+ "WHERE codigo=? ;");
+							+ " SET \"dataHora\" = ?, local = ?, \"nomeConsultor\" = ?"
+									+ " WHERE codigo = ? ;");
 			
 			ps.setDate(1, new java.sql.Date(agendamento.getDataHora().getTime()));
 			ps.setString(2, agendamento.getLocal());
-			ps.setString(3, agendamento.getNomeCondultor());
+			ps.setString(3, agendamento.getNomeConsultor());
 			ps.setInt(4, agendamento.getCodigo());
 			
 			ps.executeUpdate();
@@ -80,7 +80,7 @@ public class AgendamentosDAO {
 				agendamento.setCodigo(rs.getInt(AgendamentoModel.codigoAgendamento));
 				agendamento.setDataHora(rs.getDate(AgendamentoModel.dataHoraAgendamento));
 				agendamento.setLocal(rs.getString(AgendamentoModel.localAgendamento));
-				agendamento.setNomeCondultor(rs.getString(AgendamentoModel.nomeConsultor));
+				agendamento.setNomeConsultor(rs.getString(AgendamentoModel.nomeConsultorAgendamento));
 				
 				
 			}
@@ -101,7 +101,7 @@ public class AgendamentosDAO {
 				agendamento.setCodigo(rs.getInt(AgendamentoModel.codigoAgendamento));
 				agendamento.setDataHora(rs.getDate(AgendamentoModel.dataHoraAgendamento));
 				agendamento.setLocal(rs.getString(AgendamentoModel.localAgendamento));
-				agendamento.setNomeCondultor(rs.getString(AgendamentoModel.nomeConsultor));
+				agendamento.setNomeConsultor(rs.getString(AgendamentoModel.nomeConsultorAgendamento));
 				
 				list.add(agendamento);
 			}

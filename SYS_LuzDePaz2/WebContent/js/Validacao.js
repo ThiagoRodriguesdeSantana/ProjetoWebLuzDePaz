@@ -60,5 +60,67 @@ function validaFormulario(){
         alert("Informe a DATA DE NASCIMENTO do cliente!")
         return false;
     }
-    
+  
 }
+function validaFormularioPlanos(){
+	
+
+    let descricao = $('#descricao').val();
+    let numero = $('#numero').val();
+    let valor = $('#valor').val();
+    
+    
+
+    if(descricao == ''){
+        $('#descricao').focus();
+       
+        alert("Informe a DESCRICAO do plano!")
+        return false;
+    }
+    else 
+        if(numero == ''){
+            $('#numero').focus();
+           
+            alert("Informe o NUMERO DE DEPENDENTES!")
+            return false;
+        }
+    else 
+        if(valor == ''){
+             $('#valor').focus();
+               
+             alert("Informe o VALOR do plano!")
+             return false;
+         }
+       
+}
+
+function  validaFormularioAgendamntos(){
+	
+	let local = $('#local').val();
+	let data = $('#datahora').val();
+	
+	if(local == ''){
+		  $('#local').focus();
+          
+          alert("Informe o LOCAL!")
+          return false;
+	}
+	if(data == ''){
+		 $('#datahora').focus();
+         
+         alert("Informe  a DATA/HORA!")
+         return false;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

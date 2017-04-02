@@ -4,6 +4,6 @@ public enum TipoServico {
 
 	transporte,
 	Funeral,
-	Flores,
+	Decoracao,
 	Cerimonia
 }

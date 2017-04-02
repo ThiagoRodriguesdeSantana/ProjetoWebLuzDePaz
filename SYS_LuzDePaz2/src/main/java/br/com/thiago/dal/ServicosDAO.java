@@ -89,7 +89,7 @@ public class ServicosDAO {
 
 	}
 
-	public List<ServicosModel> listarServicos(int id) {
+	public List<ServicosModel> listarServicos() {
 		List<ServicosModel> list = new ArrayList<ServicosModel>();
 		
 		try {
@@ -121,7 +121,7 @@ public class ServicosDAO {
 		else if (tServico.equals("Funeral"))
 			return TipoServico.Funeral;
 		else if (tServico.equals("Flores"))
-			return TipoServico.Flores;
+			return TipoServico.Decoracao;
 		else
 			return TipoServico.Cerimonia;
 

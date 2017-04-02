@@ -41,14 +41,18 @@ public class PlanosDAO {
 
 	public void alterarPlano(PlanosModel plano) {
 		try {
+			
 			PreparedStatement ps = conexao
 					.prepareStatement("UPDATE public.tb_planos"
-							+ "  SET descricao=?, valor=?, \"numeroDependentes\""
+							+ "  SET descricao=?, valor=?, \"numeroDependentes\"=?"
 									+ " WHERE codigo=?;");
-			ps.setString(1, plano.getDescricao());
+			
 			ps.setDouble(2, plano.getValor());
 			ps.setInt(3, plano.getNumeroDependentes());
 			ps.setInt(4, plano.getCodigo());
+			
+			
+			System.out.println(ps.toString());
 			
 			ps.executeUpdate();
 			

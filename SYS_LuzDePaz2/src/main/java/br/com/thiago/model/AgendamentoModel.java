@@ -7,14 +7,20 @@ public class AgendamentoModel {
     private int codigo;
     private Date dataHora;
     private String local;
-    private String nomeCondultor;
+    private String nomeConsultor;
     
     public static String codigoAgendamento = "codigo";
 	public static String dataHoraAgendamento = "dataHora";
 	public static String localAgendamento = "local";
-	public static String nomeConsultor = "nomeConsultor";
+	public static String nomeConsultorAgendamento = "nomeConsultor";
 	
 	
+	public String getNomeConsultor() {
+		return nomeConsultor;
+	}
+	public void setNomeConsultor(String nomeConsultor) {
+		this.nomeConsultor = nomeConsultor;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -33,12 +39,7 @@ public class AgendamentoModel {
 	public void setLocal(String local) {
 		this.local = local;
 	}
-	public String getNomeCondultor() {
-		return nomeCondultor;
-	}
-	public void setNomeCondultor(String nomeCondultor) {
-		this.nomeCondultor = nomeCondultor;
-	}
+
 	public static String getCodigoAgendamento() {
 		return codigoAgendamento;
 	}
@@ -57,11 +58,6 @@ public class AgendamentoModel {
 	public static void setLocalAgendamento(String localAgendamento) {
 		AgendamentoModel.localAgendamento = localAgendamento;
 	}
-	public static String getNomeConsultor() {
-		return nomeConsultor;
-	}
-	public static void setNomeConsultor(String nomeConsultor) {
-		AgendamentoModel.nomeConsultor = nomeConsultor;
-	}
+	
 	
 }

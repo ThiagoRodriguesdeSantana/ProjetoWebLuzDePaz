@@ -12,6 +12,7 @@ html {
 body {
 	
 }
+
 form{
 	margin-left: 200px;
 	margin-right: 200px;
@@ -4968,6 +4969,7 @@ a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #eee;
+  
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4977,6 +4979,7 @@ a.badge:focus {
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;
+  
 }
 .jumbotron > hr {
   border-top-color: #d5d5d5;
