@@ -46,7 +46,7 @@ public class PlanosDAO {
 					.prepareStatement("UPDATE public.tb_planos"
 							+ "  SET descricao=?, valor=?, \"numeroDependentes\"=?"
 									+ " WHERE codigo=?;");
-			
+			ps.setString(1, plano.getDescricao());
 			ps.setDouble(2, plano.getValor());
 			ps.setInt(3, plano.getNumeroDependentes());
 			ps.setInt(4, plano.getCodigo());

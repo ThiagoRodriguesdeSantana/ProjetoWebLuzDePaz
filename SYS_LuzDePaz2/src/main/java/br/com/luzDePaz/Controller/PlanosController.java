@@ -40,6 +40,7 @@ public class PlanosController extends HttpServlet {
         	int codigo = Integer.parseInt(request.getParameter("codigo"));
         	PlanosModel plano = dao.consultarPlanos(codigo);
         	request.setAttribute("plano", plano);
+        	request.setAttribute("planos", dao.listarPlanos());
         }
         if(comando.equalsIgnoreCase("excluir")){
         	Acao = Listar;
@@ -65,8 +66,7 @@ public class PlanosController extends HttpServlet {
 		
 		if(codigo.isEmpty()){
 			dao.inserirPlano(plano);
-		}
-		else{
+		}else{
 			plano.setCodigo(Integer.parseInt(codigo));
 			dao.alterarPlano(plano);
 		}

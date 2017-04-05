@@ -18,8 +18,23 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Validacao.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <link href="css/half-slider.css" rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	width: 70%;
+	margin: auto;
+}
+</style>
 
 <style>
 footer {
@@ -30,7 +45,7 @@ footer {
 </style>
 
 </head>
-<body>
+<body class="corpo">
 	<div class="jumbotron">
 		<div class="container text-center">
 			<h1>Luz de Paz</h1>
@@ -54,96 +69,28 @@ footer {
 						clientes</a></li>
 				<li><a href="PlanosController?comando=listar">Cadastro de
 						Planos</a></li>
-				<li><a href="AgendamentoController?comando=listar">Agendamento de Visitas</a></li>
-				<li><a href="ServicosController?comando=listar">Cadastro de Serviços</a></li>
+				<li><a href="AgendamentoController?comando=listar">Agendamento
+						de Visitas</a></li>
+				<li><a href="ServicosController?comando=listar">Cadastro de
+						Serviços</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Your Account</a></li>
-				<li><a href="#"><span
-						class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+						Sua Conta</a></li>
 			</ul>
 		</div>
 	</div>
 	</nav>
-
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="panel panel-danger">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="panel panel-success">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-		</div>
+	   
 	</div>
-	<br>
+	
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="panel panel-primary">
-					<div class="panel-heading">BLACK FRIDAY DEAL</div>
-					<div class="panel-body">
-						<img src="https://placehold.it/150x80?text=IMAGE"
-							class="img-responsive" style="width: 100%" alt="Image">
-					</div>
-					<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<br>
-	<br>
-
+</body>
 	<footer class="container-fluid text-center">
-	<p>Footer Text</p>
+	<p>Viva Feliz</p>
 	</footer>
 
 
-</body>
+
 </html>

@@ -18,6 +18,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Validacao.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <style>
 footer {
@@ -28,7 +29,8 @@ footer {
 </style>
 
 </head>
-<body>
+<body  class="corpo">
+    
 	<div class="jumbotron">
 		<div class="container">
 			<div class="navbar-header">
@@ -61,9 +63,8 @@ footer {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Your Account</a></li>
-				<li><a href="#"><span
-						class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+						Sua Conta</a></li>
+				
 			</ul>
 		</div>
 	</div>
@@ -86,22 +87,19 @@ footer {
 			</div>
 			
 			<div class="form-group col-md-3">
-				<label for="datepicker">Data/Hora da visita</label>
+				<label for="datahora">Data/Hora da visita</label>
 				<p>
 					<input type="date" id="datahora" name="dataHora"
 						class="form-control"
-						value="<fmt:formatDate pattern="MM/dd/yyyy" value="${agenda.dataHora}" />">
+						value="<fmt:formatDate pattern="dd/MM/yyyy" value="${agenda.dataHora}" />">
 				</p>
 			</div>
-
 			
-
 			<div class="form-group col-md-9">
 				<label for="valor">Nome do Consultor</label> <input type="text"
 					class="form-control" id="nomeConsultor" placeholder="nome do consultor" name="nomeConsultor"
 					value="<c:out value="${agenda.nomeConsultor}"/>">
 			</div>
-
 
 			<input type="submit" class="btn btn-success" value="enviar" />
 		</form>
@@ -126,7 +124,7 @@ footer {
 						<td><c:out value="${agenda.codigo}" /></td>
 						<td><c:out value="${agenda.local}" /></td>
 						<td><c:out value="${agenda.nomeConsultor}" /></td>
-						<td><fmt:formatDate pattern="yyyy-MMM-dd" value="${agenda.dataHora}" /></td>
+						<td><fmt:formatDate pattern="dd-MM-yyyy" value="${agenda.dataHora}" /></td>
 						<td><a
 							href="AgendamentoController?comando=atualizar&codigo=<c:out value="${agenda.codigo}"/>">Atualizar</a></td>
 						<td><a

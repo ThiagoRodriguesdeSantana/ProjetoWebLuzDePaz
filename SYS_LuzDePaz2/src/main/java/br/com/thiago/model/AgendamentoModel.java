@@ -9,11 +9,13 @@ public class AgendamentoModel {
     private String local;
     private String nomeConsultor;
     
-    public static String codigoAgendamento = "codigo";
+    
+	public static String codigoAgendamento = "codigo";
 	public static String dataHoraAgendamento = "dataHora";
 	public static String localAgendamento = "local";
 	public static String nomeConsultorAgendamento = "nomeConsultor";
 	
+
 	
 	public String getNomeConsultor() {
 		return nomeConsultor;

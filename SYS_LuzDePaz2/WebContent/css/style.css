@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+.jumbotron{
+	background-image: url("imagens/campoFlorido-1261796_1280.jpg");
+}
+.corpo{
+	background-image: url("imagens/eight_horns.png");
+}
+.container{
+	top: opx;
+}
+img{
+	height: 100px;
+}
+.meuCarrossel{
+	height: 300px;
+	white:1000px
+}

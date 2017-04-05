@@ -20,6 +20,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/Validacao.js"></script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 <style>
 footer {
@@ -29,7 +30,7 @@ footer {
 }
 </style>
 </head>
-<body>
+<body  class="corpo">
 	<div class="jumbotron">
 		<div class="container">
 			<div class="navbar-header">
@@ -63,7 +64,7 @@ footer {
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-user"></span>
-						Your Account</a></li>
+						Sua Conta</a></li>
 				<li><a href="#"><span
 						class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
 			</ul>

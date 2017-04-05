@@ -1,5 +1,6 @@
 package br.com.luzDePaz.Controller;
 
+import java.awt.event.FocusAdapter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,6 +45,9 @@ public class AgendamentoController extends HttpServlet {
         	Acao = Listar;
         	int codigo = Integer.parseInt(request.getParameter("codigo"));
         	AgendamentoModel agenda = dao.consultarAgendamento(codigo);
+        	
+        	
+        	
         	request.setAttribute("agenda", agenda);
         }
 		if(comando.equalsIgnoreCase("excluir")){
@@ -66,8 +70,9 @@ public class AgendamentoController extends HttpServlet {
 		try {
 			AgendamentoModel agendamento = new AgendamentoModel();
 			
-			SimpleDateFormat dataS = new SimpleDateFormat("dd-MM-yyyy");
+			SimpleDateFormat dataS = new SimpleDateFormat("yyyy-MM-dd");
 			Date data = dataS.parse(request.getParameter(AgendamentoModel.dataHoraAgendamento));
+			System.out.println(data);
 			agendamento.setDataHora(data);
 			
 			agendamento.setLocal(request.getParameter(AgendamentoModel.localAgendamento));
